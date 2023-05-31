@@ -95,15 +95,14 @@ svg {
 
 .screens .webcam-cont {
     width: 100%;
-    aspect-ratio: 1;
     margin-bottom: 20px;
     background-color: black;
 }
 
-.screens .webcam-cont .webcam{
+.screens .webcam{
     width: 100%;
-    height: 100%;
-    background-color: black;
+    margin: 20px;
+    padding: 0;
 }
 
 #sc {

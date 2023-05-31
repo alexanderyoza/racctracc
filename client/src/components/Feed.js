@@ -58,7 +58,7 @@ function Feed() {
                 ) : ( 
                     <InfiniteScroll className='infinite-scroll' hasMore={hasNextPage} loadMore={fetchNextPage}>
                         {data.pages.map((page) =>
-                            page.results.map((post) => <PostCard key={post._id} post={post} />)
+                            page.results.map((post) => <Card key={post._id} post={post} />)
                         )}
                     </InfiniteScroll>
                 )}

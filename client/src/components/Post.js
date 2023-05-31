@@ -4,13 +4,16 @@ import Webcam from 'react-webcam';
 import '../styles/Post.css';
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import { useState, useRef } from 'react';
+import { useState, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import exitImg from '../media/exit.png';
-import { AiOutlineClose, AiOutlineCamera } from "react-icons/ai";
+import { AiOutlineCamera } from "react-icons/ai";
 
 function Home() {
   
+  const FACING_MODE_USER = "user";
+  const FACING_MODE_ENVIRONMENT = "environment";
+
   const navigate = useNavigate();
 
   const [id, setId] = useState(null);
@@ -18,6 +21,7 @@ function Home() {
   const [location, setLocation] = useState('');
   const [image, setImage] = useState(null);
   const [taken, setTaken] = useState(false);
+  const [facingMode, setFacingMode] = useState(FACING_MODE_USER);
 
   
 
@@ -86,18 +90,31 @@ function Home() {
 
   const webRef = useRef(null);
 
-  
+  const videoConstraints = {
+    facingMode : FACING_MODE_ENVIRONMENT
+  };
+
   const showImage = () => {
     setTaken(true);
-    setImage(webRef.current.getScreenshot({width: 1080, height: 1080}));
+    setImage(webRef.current.getScreenshot());
   };
-  
+
+  const handleClick = React.useCallback(() => {
+    setFacingMode(
+      prevState =>
+        prevState === FACING_MODE_USER
+          ? FACING_MODE_ENVIRONMENT
+          : FACING_MODE_USER
+    );
+  }, []);
+
   function getTimeStamp() {
     return Date.now();
   }
   const photoRetake = () => {
     setTaken(false);
   }
+
 
   return (
     <div className='upload-cont'>
@@ -118,22 +135,15 @@ function Home() {
 
           ):(
             <div className='screens'>
-              <div className='webcam-cont'>
-                <Webcam ref={webRef} 
-                  className="webcam"
-                    screenshotQuality={1000} 
-                    forceScreenshotSourceSize
-                    videoConstraints={{
-                      height: '1280px',
-                      width: '1280px',
-                      aspectRatio: 1,
-                      facingMode: 'user'
-                    }}
-                    height="100%"
-                    width="100%"
-                  />
-              </div>
-              
+              <Webcam ref={webRef} 
+                className='webcam'
+                screenshotFormat="image/jpeg" 
+                height = '100%'
+                width = '100%'
+                forceScreenshotSourceSize
+                videoConstraints={videoConstraints}
+                />
+              <button onClick={handleClick}>Flip Camera</button>
               <button id='sc' onClick={showImage}><AiOutlineCamera /></button>
             </div>
           )
