@@ -1,0 +1,119 @@
+/* all styling */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+
+.profile-cont {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #9D816B;
+}
+
+.profile {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 130px;
+}
+
+.profile .info {
+    height: 35vh;
+    width: 100%;
+    color: #71441E;
+    background-color: #E2CDB5;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.name {
+    height: 10vh;
+    font-size: 36px;
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.username {
+    height: 10vh;
+    font-size: 25px;
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.post-count {
+    width: 60%;
+    border-radius: 40px;
+    height: 52px;
+    width: 243px;
+    background-color: #A4AC86;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.post-count div {
+    font-size: 40px;
+    height: 48px;
+    width: 213px;
+    width: 90%;
+    background-color: transparent;
+    color: #E9DBCE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    font-weight: bold;
+}
+
+
+.post-sect {
+    background-color: #9D816B;
+    border-top: 1px solid #9D816B;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.post-block {
+    width:  calc(100%/3 - 4px);
+    aspect-ratio: 1;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.post-block img {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+}

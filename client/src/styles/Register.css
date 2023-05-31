@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+
+.bg-container {
+    width: 100vw;
+    max-width: 500px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E2CDB5;
+}
+
+.register-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.register-container img {
+    width: 100%;
+    background-color: transparent;
+}
+
+.input-field {
+    background-color: transparent;
+    width: 90%;
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-field input {
+    padding-left: 5px;
+    width: 90%;
+    height: 46px;
+    background-color: white;
+    border-radius: 15px;
+    border-color: white;
+    border-style: solid;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 400;
+    color:  black;
+}
+
+.register-container .footer {
+    background-color: transparent;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: #36251D;
+}
+
+.register-container button {
+    width: 181px;
+    height: 57px;
+    margin: 5vh 0px 0px 0px;
+    background-color: #656d4a;
+    border-radius: 64px;
+    border-style: none;
+    font-size: 35px;
+    color: #E9dbce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

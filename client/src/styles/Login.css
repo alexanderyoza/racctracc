@@ -1,0 +1,79 @@
+/* all styling */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+
+
+.bg-container-log {
+    width: 100vw;
+    max-width: 500px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E2CDB5;
+}
+
+.login-container-log {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.login-container-log img {
+    width: 100%;
+    background-color: transparent;
+}
+
+.input-field-log {
+    background-color: transparent;
+    width: 90%;
+    margin: 20px 0px 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-field-log input {
+    width: 90%;
+    height: 46px;
+    background-color: white;
+    border-radius: 15px;
+    border-color:white;
+    border-style: solid;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 400;
+    color: black;
+    padding-left: 5px;
+}
+
+
+.login-container-log .options-log {
+    background-color: transparent;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #36251D;
+}
+
+.footer-log {
+    font-size: 15px;
+}
+
+.login-container-log .btn-log {
+    width: 181px;
+    height: 57px;
+    margin: 5vh 0px 0px 0px;
+    background-color: #656d4a;
+    border-radius: 64px;
+    border-style: none;
+    font-size: 35px;
+    color: #E9dbce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

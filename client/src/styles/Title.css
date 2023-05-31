@@ -1,0 +1,25 @@
+.title {
+    position: relative;
+    height: 100px;
+    width: 100vw;
+    max-width: 500px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    background-color: #E9DBCE;
+    color: #36251D;
+    
+    position: fixed;
+    top: 0;
+}
+
+.title div {
+    width: 90%;
+    font-size: calc(20px + 2vw);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
