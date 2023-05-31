@@ -42,11 +42,14 @@ export default function Register() {
             alert('User created! Check your email for an email verification link to activate your account.');
             setRegistering(false);
             console.log(registerResponse);
+            navigate('/login');
         } catch (err) {
             alert('User with this email already exists. Please enter another email to create an account.');
             setRegistering(false);
             console.log(err);
         }
+
+       
 
     }
 

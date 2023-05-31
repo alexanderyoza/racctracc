@@ -110,10 +110,10 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 6px;
+    overflow: hidden;
 }
 
 .post-block img {
     height: 100%;
-    width: 100%;
     background-color: white;
 }

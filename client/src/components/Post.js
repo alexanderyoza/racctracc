@@ -8,6 +8,7 @@ import { useState, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import exitImg from '../media/exit.png';
 import { AiOutlineCamera } from "react-icons/ai";
+import Rotate from '../media/rotate.png'
 
 function Home() {
   
@@ -91,7 +92,9 @@ function Home() {
   const webRef = useRef(null);
 
   const videoConstraints = {
-    facingMode : FACING_MODE_ENVIRONMENT
+    facingMode: FACING_MODE_ENVIRONMENT,
+    height: 1280,
+    width: 960
   };
 
   const showImage = () => {
@@ -119,32 +122,41 @@ function Home() {
   return (
     <div className='upload-cont'>
       <div className="camera">
-        <Title/>
 
         {
           taken ? (
-            <div className='screens'>
+            <div className='retake-cont'>
               <button id='retake' onClick={photoRetake}><img src={exitImg} alt="Go Back" /></button>
-              <img src={image} alt='userphoto'/>
-                <form className='upload-form' onSubmit={handleFormSubmit}>
-                  <input placeholder='Location' type='text' onChange={handleLocationChange} />
-                  <input placeholder='Caption' type='text' onChange={handleCaptionChange}/>
-                  <button type="submit">Upload Image</button>
+              <div className='screens'>
+                <div className='photo-review'>
+                  <img src={image} alt='userphoto' />
+                </div>
+                
+                  <form className='upload-form' onSubmit={handleFormSubmit}>
+                    <input placeholder='Location' type='text' onChange={handleLocationChange} />
+                    <input placeholder='Caption' type='text' onChange={handleCaptionChange}/>
+                    <button type="submit">Upload Image</button>
                 </form>
+              </div>
             </div>
 
           ):(
             <div className='screens'>
-              <Webcam ref={webRef} 
-                className='webcam'
-                screenshotFormat="image/jpeg" 
-                height = '100%'
-                width = '100%'
-                forceScreenshotSourceSize
-                videoConstraints={videoConstraints}
-                />
-              <button onClick={handleClick}>Flip Camera</button>
-              <button id='sc' onClick={showImage}><AiOutlineCamera /></button>
+                <div className='webcam-cont'>
+                <Webcam ref={webRef} 
+                  className='webcam'
+                  screenshotFormat="image/jpeg" 
+                  forceScreenshotSourceSize
+                    videoConstraints={videoConstraints}
+                    height='100%'
+                    mirrored={facingMode == 'user' ? true: false}
+                  />
+                </div>
+                <div className='camera-buttons'>
+                  <button id='sc' onClick={showImage}><AiOutlineCamera /></button>
+                  <button onClick={handleClick} className='flip'><img src={Rotate} alt="rotate" /></button>
+                </div>
+                
             </div>
           )
         }

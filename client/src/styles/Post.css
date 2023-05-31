@@ -5,6 +5,7 @@ svg {
 .upload-cont {
     width: 100vw;
     max-width: 500px;
+    min-height: 100vh;
     height: 100vh;
     display: flex;
     justify-content: flex-start;
@@ -15,7 +16,7 @@ svg {
 } 
 
 .camera {
-    margin-top: 120px;
+    margin-top: 40px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -24,10 +25,21 @@ svg {
     height: 80%;
 } 
 
+.screens .photo-review {
+    width: 80%;
+    aspect-ratio: 1;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+
 
 .screens img {
-    width: 100%;
-    aspect-ratio: 1;
+    height: 100%;
     margin-bottom: 20px;
 }
 
@@ -62,14 +74,23 @@ svg {
     border-radius: 20px;
     box-shadow: none;
     border: none;
+    margin-bottom: 110px;
+}
+
+.retake-cont {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
 }
 
 
 #retake {
-    position: absolute;
-    width: 25px;
-    top: 15px;
-    left: 15px;
+    position: relative;
+    width: 20px;
+    top: 10px;
+    left: 10px;
     padding: 5px 10px;
     background-color: transparent;
     border: none;
@@ -84,34 +105,71 @@ svg {
 
 
 
-
 .screens {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    row-gap: 10px;
+    background-color: #E9DBCE;
+    
 }
 
 .screens .webcam-cont {
     width: 100%;
+    aspect-ratio: 1;
+    height: fit-content;
     margin-bottom: 20px;
-    background-color: black;
+    background-color: #E9DBCE;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 40px;
 }
 
-.screens .webcam{
-    width: 100%;
-    margin: 20px;
+.screens .webcam-cont .webcam{
+    margin: 0;
     padding: 0;
+    height: 100%;
+    border-radius: 40px;
+}
+
+.camera-buttons {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.flip {
+    border-color: aliceblue;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flip img {
+    width: 50%;
+    height: 50%;
+    margin: 0;
 }
 
 #sc {
     border-color: aliceblue;
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border-radius: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5px;
 }
 
