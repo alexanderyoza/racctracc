@@ -70,7 +70,7 @@ function Home() {
 
     const blob = await fetch(image).then((res) => res.blob());
     console.log(image);
-    const file = new File([blob], currentTime + ".jpeg", {type: 'image/webp'});
+    const file = new File([blob], id + '_' + currentTime + ".jpeg", {type: 'image/webp'});
     formData.append('image', file);
 
     for (let i of formData) {
